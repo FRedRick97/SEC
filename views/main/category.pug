@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    .container
+        .row.top
+            - for (var i = 0; i < products.length; i++)
+                .col-md-4.holder
+                    - var url = '/product/' + products[i]._id
+                    a(href=url)
+                        .thumbnail
+                            img(src=image[i])
+                            .caption
+                            h3=products[i].name
+                            p=products[i].category.name
+                            p &#8377; #{products[i].price}

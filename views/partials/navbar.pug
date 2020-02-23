@@ -1,0 +1,30 @@
+nav
+  img.logo(src="/assets/img/sell_first.jpg")
+  form.navbar-form.navbar-left(method='get' action='/search')
+      .form-group
+        input.form-control(type='text' name='q' placeholder='Seach...')
+        button.btn.btn-default(type='submit') Submit
+  ul
+    li
+      a(href='/') Home
+    li.dropdown
+      a.dropdown-toggle(data-toggle='dropdown' href='#') Categories
+      ul.dropdown-menu
+        - for (var i = 0; i < categories.length; i++)
+          li
+            a(href='/products/'+categories[i]._id) #{categories[i].name}
+      if (originalUser)
+          li
+              a(href="/logout") Logout
+      else
+          li.navLogin
+              a(href="/login") Login
+      if (admin)
+        li
+          a(href="/add-category") Add
+      else
+        li.navSell
+         a(href="/add-product") Sell
+
+
+

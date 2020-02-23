@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content
+  .white
+    .image-box
+      span.signin-heading SIGN IN
+    .form-box-signin
+      form(method="post" id="login-form" action="/login")
+        .mid-signin
+          label.signin-label(for="email") Email ID
+          input.signin-input(type="text" name="email")
+        br
+        br
+        .mid-signin
+          label.signin-label(for="password") Password
+          input.signin-input(type="password" name="password")
+        br
+        .mid-signin
+          a(href="/signup") Create a new Account
+        br
+        .mid-signin
+          input(type="submit" value="Login")
+        if (errors.length > 0)
+          br
+          .alert.alert-danger.alert-dismissible
+            a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+            strong Oops!
+            |  #{errors}
+

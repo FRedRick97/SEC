@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+    br
+    br
+    .container.top
+        .row
+            .col-sm-6.col-md-4
+                img.img-circle.img-responsive.img-center(src=user.profilePic alt='profile picture')
+
+                br
+                p
+                    b Name:
+                    |  #{user.name}
+                p
+                    b Email:
+                    |  #{user.email}
+                if (!user.address)
+                    p
+                        b Address:
+                        span.red  You have no address
+                else
+                    p
+                        b Address:
+                        |  #{user.address}

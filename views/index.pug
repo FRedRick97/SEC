@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+    .someContainer
+      img(src='/assets/img/shop.jpg' style='height: 90vh; width: 100%;')
+      a(href='/page/1')
+        button(type='button').btnHome Shop Now
+    if (errors.length > 0)
+      .alert.alert-danger.alert-dismissible
+        a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+        strong Oops!
+        |  #{errors}
+    if (success.length > 0)
+      .alert.alert-success.alert-dismissible
+          a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+          strong Success!
+          |  #{success}

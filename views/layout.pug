@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title SEC
+        link(rel='stylesheet' type='text/css' href='/assets/css/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet")
+
+        link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:400,700,800" rel="stylesheet')
+        link(rel='stylesheet' type='text/css' href='/assets/css/style.css')
+        //- jQuery should be above bootstrap.min.js because it requires jQuery
+        script(src='/assets/js/jquery-3.3.1.min.js')
+        script(src='/assets/js/bootstrap.min.js')
+        script(src='/assets/js/script.js')
+        script(src='/assets/js/jquery.validate.min.js')
+        script(src='/assets/js/additional-methods.min.js')
+        script(src='/assets/js/validation.js')
+
+    body
+        include ./partials/navbar.pug
+        block content
+
+

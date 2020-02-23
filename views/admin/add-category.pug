@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+    .whole-page(style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);")
+        .outer-modal
+            .upper
+                h1 Add Product Category
+            .lower
+                form(method='post' id='addCategory' action="/add-category")
+                    input.add-category-input(type='text' name='category' placeholder='Name')
+                    br
+                    br
+                    input.add-category-submit(type='submit' value='submit')
+            if (success.length > 0)
+                br
+                .alert.alert-success.alert-dismissible
+                    a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+                    strong Success!
+                    |  #{success}
+            if (errors.length > 0)
+                br
+                .alert.alert-danger.alert-dismissible
+                    a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+                    strong Oops!
+                    |  #{errors}

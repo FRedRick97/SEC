@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block content
+    .whole-page(style='background-color:#F5B041')
+        .outer-modal(style='padding: 20px;')
+            if (errors.length > 0)
+                br
+                .alert.alert-danger.alert-dismissible
+                    a.close(href='#' data-dismiss='alert' aria-label='close') &times;
+                    strong Oops!
+                    |  #{errors}
+            form(method="post" id="signup-form" action="/signup")
+                .input-group
+                    label.label-signup(for="name") Name
+                        span.asterick  *
+                    br
+                    input.validate.control(type="text" placeholder="Name" name="name" minlength="3")
+                .input-group
+                    label.label-signup(for="email") Email
+                        span.asterick  *
+                    br
+                    input.validate.control(type="text" placeholder="Email" name="email")
+                .input-group
+                    label.label-signup(for="address") Address
+                        span.asterick  *
+                    br
+                    input.validate.control(type="text" placeholder="Address" name="address")
+                .input-group
+                    label.label-signup(for="phone") Phone Number
+                    br
+                    input.validate.control(type="text" placeholder="Phone Number" name="phone")
+                .input-group
+                    label.label-signup(for="password") Password
+                        span.asterick  *
+                    br
+                    input.validate.control(type="password" placeholder="Password" name="password")
+                .input-group
+                    label.label-signup(for="confirm") Confirm Password
+                        span.asterick  *
+                    br
+                    input.validate.control(type="password" placeholder="Confirm Password" name="confirm")
+                    br
+                    br
+                    input#signup-button(type="submit" value="Create An Account")
